@@ -1,41 +1,64 @@
-HiveMind
+# HiveMind  
 
-HiveMind is a full-stack web application built with Node.js, Express, MongoDB, and EJS for managing observations, tickets, and communication between two user roles: Observers and Support staff. The system was developed as part of the SWE5303: Applied Software Engineering module and demonstrates full-stack development, secure authentication, and API integration.
+HiveMind is a **full-stack web application** built with **Node.js, Express, MongoDB, and EJS**. It enables structured communication and workflow management between two roles: **Observers** and **Support staff**.  
 
-Features
+---
 
-Role-Based Access Control
+## Features  
 
-Observers can register, log in, submit observations, and raise support tickets.
+- **User Authentication & Roles**  
+  - Secure registration and login using **Passport.js**, **bcrypt**, and **express-session**.  
+  - Role-based access control (Observer vs. Support).  
 
-Support staff can manage submitted observations, respond to tickets, and message Observers.
+- **Observers**  
+  - Submit and track **observations**.  
+  - Create and manage **support tickets**.  
+  - Access a personal dashboard with account details.  
 
-Observation Tracking – Observers can submit and view their observations, while support staff can update statuses and manage workflow.
+- **Support Staff**  
+  - View and manage submitted observations.  
+  - Update observation/ticket statuses.  
+  - Respond to support tickets.  
 
-Ticketing System – Provides a structured way for Observers to request support, with Support staff able to view, respond, and close tickets.
+- **Messaging**  
+  - Built-in system for communication between Observers and Support.  
+  - Messages stored in the database for transparency.  
 
-Messaging – Direct communication between Observers and Support accounts, with messages stored in the database for clear history.
+- **Validation & Security**  
+  - Password hashing with bcrypt.  
+  - Middleware for route protection and role enforcement.  
 
-Authentication & Security – Implemented with Passport.js and bcrypt for secure login and password encryption. Sessions are handled via express-session.
+---
 
-API Integration – Includes What3Words API for precise observation location data, and Stripe integration for secure card handling with hashing.
+## Architecture  
 
-MVC Architecture – Routes, controllers, models, and views are separated for maintainability. Middleware ensures authentication and role validation.
+- **MVC Pattern**  
+  - **Models:** User, Observation, Ticket, Message.  
+  - **Routes:** Authentication, account management, observations, support, messaging.  
+  - **Middleware:** Authentication and role checks.  
+  - **Views:** EJS templates with reusable partials for layout.  
 
-Responsive Design – EJS-based UI styled with a pastel theme (green backgrounds and purple form panels), following the provided wireframes for accessibility and clarity.
+- **Testing**  
+  - **Jest** used for component and route testing.  
 
-Tech Stack
+- **Configuration**  
+  - Managed with **dotenv** for environment variables.  
+  - **Axios** included for handling external API requests.  
 
-Backend: Node.js, Express
+---
 
-Frontend: EJS templates with responsive CSS
+## Design  
 
-Database: MongoDB with Mongoose
+- **Frontend:** EJS templates with responsive design.  
+- **Styling:** Pastel theme with **green backgrounds** and **purple form panels** (based on wireframes).  
+- **Layout:** Consistent use of partials for headers, footers, and navigation.  
 
-Authentication: Passport.js, bcrypt, express-session
+---
 
-APIs: What3Words, Stripe
+## Project Goals  
 
-Project Goals
-
-HiveMind was created to apply software engineering principles to a real-world style web system. It demonstrates skills in full-stack development, secure user management, API integration, and modular architecture, while balancing usability, functionality, and security.
+HiveMind was developed as part of the **SWE5303: Applied Software Engineering module** to showcase:  
+- Full-stack web development with a modern Node.js stack.  
+- Secure authentication and role-based access control.  
+- Clear separation of concerns using MVC architecture.  
+- Practical application of **software engineering principles** including validation, modularity, and testing.  
